@@ -24,11 +24,7 @@ jobs:
       - name: Run tests with pytest
         run: pytest
 
-      - run: |
-          git remote -v
-          git remote rm heroku
-          git remote add heroku https://git.heroku.com/simplecicd22.git
-          heroku keys:add
+      - uses: akhileshns/heroku-deploy@v3.8.9
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "simplecicd22"
