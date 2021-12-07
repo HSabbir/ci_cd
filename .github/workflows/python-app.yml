@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests with pytest
         run: |
-        pytest
+          pytest
 
       - uses: akhileshns/heroku-deploy@v3.8.9
         with:
